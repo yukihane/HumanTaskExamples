@@ -67,7 +67,7 @@ public class HumanTaskClient {
 
 		ksession = kbase.newStatefulKnowledgeSession();
 		logger = KnowledgeRuntimeLoggerFactory.newConsoleLogger(ksession);
-		ksession.getWorkItemManager().registerWorkItemHandler("Human Task", new WSHumanTaskHandler());
+		ksession.getWorkItemManager().registerWorkItemHandler("Human Task", new WSHumanTaskHandler(ksession));
 		ksession.getWorkItemManager().registerWorkItemHandler("Report", new GenerateReportWorkItem());
 
 	}
